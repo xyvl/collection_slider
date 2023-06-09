@@ -14,8 +14,8 @@ const MiddleSliderTwo = () => {
         const slider = document.querySelector(`.middle_two_slider`) as HTMLElement;
         const sliderInner = document.querySelector(`.middle_two_slider_inner`) as HTMLElement;
         const sliderBlock = document.querySelectorAll<HTMLElement>(`.middle_two_slider_block`);
-        const sliderMini = document.querySelector(`.${styles.flex}`) as HTMLElement;
-        const sliderWindow = document.querySelector(`.${styles.window}`) as HTMLElement;
+        const sliderMini = document.querySelector(`.middle_two_flex`) as HTMLElement;
+        const sliderWindow = document.querySelector(`.middle_two_window`) as HTMLElement;
 
         let startX: number;
         let active: boolean;
@@ -34,9 +34,9 @@ const MiddleSliderTwo = () => {
 
             sliderInner.style.pointerEvents = 'auto';
             const momentLeft = Math.round(parseInt((window.getComputedStyle(sliderInner).transform).slice(18)) / sliderBlock[0].clientWidth);
-            const sliderMini = document.querySelector(`.${styles.flex}`) as HTMLElement;
+            const sliderMini = document.querySelector(`.middle_two_flex`) as HTMLElement;
 
-            const sliderWindow = document.querySelector(`.${styles.window}`) as HTMLElement;
+            const sliderWindow = document.querySelector(`.middle_two_window`) as HTMLElement;
             const windowWidth = sliderMini.clientWidth / Math.round(sliderMini.clientWidth / sliderWindow.clientWidth);
 
             sliderInner.style.transition = 'all .2s'
@@ -55,8 +55,8 @@ const MiddleSliderTwo = () => {
 
             const coefficent = leftAtTheMoment / sliderBlockWidth;
 
-            const sliderMini = document.querySelector(`.${styles.flex}`) as HTMLElement;
-            const sliderWindow = document.querySelector(`.${styles.window}`) as HTMLElement;
+            const sliderMini = document.querySelector(`.middle_two_flex`) as HTMLElement;
+            const sliderWindow = document.querySelector(`.middle_two_window`) as HTMLElement;
             const windowWidth = sliderMini.clientWidth / Math.round(sliderMini.clientWidth / sliderWindow.clientWidth);
 
             if (event - startX > 0) {
@@ -72,7 +72,6 @@ const MiddleSliderTwo = () => {
             } else
                 sliderInner.style.transform = `translate(${x - startX - leftAtTheMoment}px, 0)`
 
-            console.log(coefficent)
             sliderWindow.style.transform = `translate(${coefficent * windowWidth * -1}px, 0)`;
         }
 
@@ -102,8 +101,8 @@ const MiddleSliderTwo = () => {
         btnLeft.addEventListener('click', e => {
             sliderInner.style.transition = 'all .2s'
 
-            const sliderMini = document.querySelector(`.${styles.flex}`) as HTMLElement;
-            const sliderWindow = document.querySelector(`.${styles.window}`) as HTMLElement;
+            const sliderMini = document.querySelector(`.middle_two_flex`) as HTMLElement;
+            const sliderWindow = document.querySelector(`.middle_two_window`) as HTMLElement;
             const windowWidth = sliderMini.clientWidth / Math.round(sliderMini.clientWidth / sliderWindow.clientWidth);
 
             let leftAtTheMoment = Math.round(parseInt((window.getComputedStyle(sliderInner).transform).slice(18)) ? parseInt((window.getComputedStyle(sliderInner).transform).slice(18)) / sliderBlock[0].clientWidth : 0);
@@ -117,8 +116,8 @@ const MiddleSliderTwo = () => {
         btnRight.addEventListener('click', e => {
             sliderInner.style.transition = 'all .2s'
 
-            const sliderMini = document.querySelector(`.${styles.flex}`) as HTMLElement;
-            const sliderWindow = document.querySelector(`.${styles.window}`) as HTMLElement;
+            const sliderMini = document.querySelector(`.middle_two_flex`) as HTMLElement;
+            const sliderWindow = document.querySelector(`.middle_two_window`) as HTMLElement;
             const windowWidth = sliderMini.clientWidth / Math.round(sliderMini.clientWidth / sliderWindow.clientWidth);
 
             let leftAtTheMoment = Math.round(parseInt((window.getComputedStyle(sliderInner).transform).slice(18)) ? parseInt((window.getComputedStyle(sliderInner).transform).slice(18)) / sliderBlock[0].clientWidth : 0);
@@ -133,8 +132,6 @@ const MiddleSliderTwo = () => {
             const coefficent = Math.floor(e?.layerX / (sliderInner.clientWidth / sliderBlock.length));
             sliderInner.style.transform = `translate(${-coefficent * 100}%, 0)`;
             sliderWindow.style.transform = `translate(${coefficent * (sliderInner.clientWidth / sliderBlock.length)}px, 0)`;
-            console.log(e?.layerX)
-            console.log(sliderInner.clientWidth / sliderBlock.length)
         })
     }, [])
     return (
@@ -153,27 +150,27 @@ const MiddleSliderTwo = () => {
                             <a href='/e' className={`${styles.slider_block} middle_two_slider_block`}>
                                 <img src={bg3} alt="" />
                             </a>
-                            <a href='/e' className={styles.slider_block}>
+                            <a href='/e' className={`${styles.slider_block} middle_two_slider_block`}>
                                 <img src={bg4} alt="" />
                             </a>
-                            <a href='/e' className={styles.slider_block}>
+                            <a href='/e' className={`${styles.slider_block} middle_two_slider_block`}>
                                 <img src={bg5} alt="" />
                             </a>
-                            <a href='/e' className={styles.slider_block}>
+                            <a href='/e' className={`${styles.slider_block} middle_two_slider_block`}>
                                 <img src={bg6} alt="" />
                             </a>
-                            <a href='/e' className={styles.slider_block}>
+                            <a href='/e' className={`${styles.slider_block} middle_two_slider_block`}>
                                 <img src={bg7} alt="" />
                             </a>
-                            <a href='/e' className={styles.slider_block}>
+                            <a href='/e' className={`${styles.slider_block} middle_two_slider_block`}>
                                 <img src={bg8} alt="" />
                             </a>
                         </div>
                     </div>
                     <div className={`${styles.btn} ${styles.right}`}>&gt;</div>
                 </div>
-                <div className={styles.flex}>
-                    <div className={styles.window}></div>
+                <div className={`${styles.flex} middle_two_flex`}>
+                    <div className={`${styles.window} middle_two_window}></div>
                     <img src={bg1} alt="" draggable="false" />
                     <img src={bg2} alt="" draggable="false" />
                     <img src={bg3} alt="" draggable="false" />
