@@ -170,7 +170,7 @@ const MiddleSliderTwo = () => {
                     <div className={`${styles.btn} ${styles.right}`}>&gt;</div>
                 </div>
                 <div className={`${styles.flex} middle_two_flex`}>
-                    <div className={`${styles.window} middle_two_window}></div>
+                    <div className={`${styles.window} middle_two_window`}></div>
                     <img src={bg1} alt="" draggable="false" />
                     <img src={bg2} alt="" draggable="false" />
                     <img src={bg3} alt="" draggable="false" />
