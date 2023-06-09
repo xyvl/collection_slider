@@ -11,9 +11,9 @@ import bg8 from '../../img/ (8).jpg'
 
 const MiddleSliderTwo = () => {
     useEffect(() => {
-        const slider = document.querySelector(`.${styles.slider}`) as HTMLElement;
-        const sliderInner = document.querySelector(`.${styles.slider_inner}`) as HTMLElement;
-        const sliderBlock = document.querySelectorAll<HTMLElement>(`.${styles.slider_blockk}`);
+        const slider = document.querySelector(`.middle_two_slider`) as HTMLElement;
+        const sliderInner = document.querySelector(`.middle_two_slider_inner`) as HTMLElement;
+        const sliderBlock = document.querySelectorAll<HTMLElement>(`.middle_two_slider_block`);
         const sliderMini = document.querySelector(`.${styles.flex}`) as HTMLElement;
         const sliderWindow = document.querySelector(`.${styles.window}`) as HTMLElement;
 
@@ -129,10 +129,6 @@ const MiddleSliderTwo = () => {
             }
         })
 
-        // const sliderMini = document.querySelector(`.${styles.flex}`) as HTMLElement;
-        // const sliderWindow = document.querySelector(`.${styles.window}`) as HTMLElement;
-        // const windowWidth = sliderMini.clientWidth / Math.round(sliderMini.clientWidth / sliderWindow.clientWidth);
-        // const windowleftAtTheMoment = parseInt((window.getComputedStyle(sliderWindow).transform).slice(18));
         sliderMini.addEventListener('click', (e: any) => {
             const coefficent = Math.floor(e?.layerX / (sliderInner.clientWidth / sliderBlock.length));
             sliderInner.style.transform = `translate(${-coefficent * 100}%, 0)`;
@@ -146,30 +142,30 @@ const MiddleSliderTwo = () => {
             <div className="wrapper">
                 <div className={styles.grid}>
                     <div className={`${styles.btn} ${styles.left}`}>&lt;</div>
-                    <div className={styles.slider}>
-                        <div className={styles.slider_inner}>
-                            <a href='/d' className={styles.slider_blockk}>
+                    <div className={`${styles.slider} middle_two_slider`}>
+                        <div className={`${styles.slider_inner} middle_two_slider_inner`}>
+                            <a href='/d' className={`${styles.slider_block} middle_two_slider_block`}>
                                 <img src={bg1} alt="" />
                             </a>
-                            <a href='/e' className={styles.slider_blockk}>
+                            <a href='/e' className={`${styles.slider_block} middle_two_slider_block`}>
                                 <img src={bg2} alt="" />
                             </a>
-                            <a href='/e' className={styles.slider_blockk}>
+                            <a href='/e' className={`${styles.slider_block} middle_two_slider_block`}>
                                 <img src={bg3} alt="" />
                             </a>
-                            <a href='/e' className={styles.slider_blockk}>
+                            <a href='/e' className={styles.slider_block}>
                                 <img src={bg4} alt="" />
                             </a>
-                            <a href='/e' className={styles.slider_blockk}>
+                            <a href='/e' className={styles.slider_block}>
                                 <img src={bg5} alt="" />
                             </a>
-                            <a href='/e' className={styles.slider_blockk}>
+                            <a href='/e' className={styles.slider_block}>
                                 <img src={bg6} alt="" />
                             </a>
-                            <a href='/e' className={styles.slider_blockk}>
+                            <a href='/e' className={styles.slider_block}>
                                 <img src={bg7} alt="" />
                             </a>
-                            <a href='/e' className={styles.slider_blockk}>
+                            <a href='/e' className={styles.slider_block}>
                                 <img src={bg8} alt="" />
                             </a>
                         </div>
