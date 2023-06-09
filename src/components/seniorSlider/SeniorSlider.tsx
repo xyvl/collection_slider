@@ -7,8 +7,8 @@ const SeniorSlider = () => {
         const slider = document.querySelector<HTMLElement>(`.${styles.slider}`);
         const sliderInner = document.querySelector(`.${styles.slider_inner}`) as HTMLElement;
         const sliderObject = document.querySelectorAll<HTMLElement>(`.${styles.slider_objec}`);
-        const btnLeft = document.querySelector<HTMLElement>(`.${styles.leftt}`);
-        const btnRight = document.querySelector<HTMLElement>(`.${styles.right}`);
+        const btnLeft = document.querySelector<HTMLElement>(`.slider_senior_left`);
+        const btnRight = document.querySelector<HTMLElement>(`.slider_senior_right`);
 
         let padding = parseInt(window.getComputedStyle(sliderObject[0]).padding);
 
@@ -144,7 +144,7 @@ const SeniorSlider = () => {
         <section>
             <div className="wrapper">
                 <div className={styles.grid}>
-                    <div className={`${styles.btn} ${styles.left}`}>&lt;</div>
+                    <div className={`${styles.btn} ${styles.left} slider_senior_left`}>&lt;</div>
                     <div className={styles.slider}>
                         <div className={styles.slider_inner}>
                             <div className={styles.slider_objec}><a href='/' className={styles.slider_block}>1</a></div>
@@ -157,7 +157,7 @@ const SeniorSlider = () => {
                             <div className={styles.slider_objec}><a href='/' className={styles.slider_block}>8</a></div>
                         </div>
                     </div>
-                    <div className={`${styles.btn} ${styles.right}`}>&gt;</div>
+                    <div className={`${styles.btn} ${styles.right} slider_senior_right`}>&gt;</div>
                 </div>
                 <ul>
                     <li className='junior'>Можно перемещатся по кнопкам</li>
